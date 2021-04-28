@@ -1,0 +1,15 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: myapp-employee
+eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]:localhost}
+    nonSecurePort: 80
+    leaseRenewalIntervalInSeconds: 5
+  client:
+    region: default
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
